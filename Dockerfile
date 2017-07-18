@@ -1,5 +1,6 @@
 FROM openjdk:8-jdk
-RUN cd /iykedy/springsample && ls -al
+COPY pom.xml /dev
+RUN ls -al /dev
 #FROM maven:latest
 #WORKDIR /iykedy/samplespring
 #RUN mvn clean install
