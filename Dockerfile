@@ -3,6 +3,5 @@ ARG PROJ_DIR=/simplespringapp
 WORKDIR ${PROJ_DIR}
 ADD pom.xml ${PROJ_DIR}/pom.xml
 ADD src ${PROJ_DIR}/src
-FROM maven:latest
-RUN mvn clean install
+RUN apt-get update && apt-get install -y maven && mvn clean install
 CMD ["mvn", "jetty:run"]
